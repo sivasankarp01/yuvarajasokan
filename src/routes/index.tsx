@@ -1,15 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 
-import portrait from "@/assets/yuvaraj-asokan.jpg.asset.json";
-import nawayef from "@/assets/nawayef-souq.jpg.asset.json";
-import seaHaven from "@/assets/sea-haven.jpg.asset.json";
-import aldar from "@/assets/aldar-manarat.jpg.asset.json";
-import cba from "@/assets/cba.jpg.asset.json";
-import redSea from "@/assets/red-sea-global.jpg.asset.json";
-import qatar from "@/assets/qatar-media.jpg.asset.json";
-import cvPdf from "@/assets/Yuvaraj-Asokan-BIM-Modeller-CV.pdf.asset.json";
-import portfolioPdf from "@/assets/Yuvaraj-Asokan-BIM-Portfolio.pdf.asset.json";
 
 const TITLE = "Yuvaraj Asokan | BIM Modeller Portfolio";
 const DESCRIPTION =
@@ -59,7 +50,7 @@ const projects = [
     location: "Hudayriyat Island, Abu Dhabi",
     type: "Townhouse Cluster",
     lod: "LOD 200",
-    image: nawayef.url,
+    image: "/images/nawayef-souq.jpg",
     alt: "Aerial view of the Nawayef Souq townhouse cluster development on Hudayriyat Island, Abu Dhabi",
     description:
       "Architectural and interior modelling from CAD updates across basement, ground and first floors.",
@@ -71,7 +62,7 @@ const projects = [
     location: "Dubai Harbour, Dubai",
     type: "Three-Tower Residential Complex",
     lod: "LOD 400",
-    image: seaHaven.url,
+    image: "/images/sea-haven.jpg",
     alt: "Colour-coded elevation diagram of the three Sea Haven residential towers at Dubai Harbour",
     description:
       "Coordinated amenities BIM for three towers, including lobby, pool, gym, clubhouse and lounge areas.",
@@ -83,7 +74,7 @@ const projects = [
     location: "Abu Dhabi, UAE",
     type: "G+12 Residential Building",
     lod: "LOD 400",
-    image: aldar.url,
+    image: "/images/aldar-manarat.jpg",
     alt: "Isometric Revit model of the Aldar Manarat Phase 2 G+12 residential building in Abu Dhabi",
     description:
       "Architectural and facade BIM, coordinated plans, call-outs, schedules and IFC-driven model verification.",
@@ -95,7 +86,7 @@ const projects = [
     location: "Commercial Interiors",
     type: "Interior Fit-out",
     lod: "LOD 400",
-    image: cba.url,
+    image: "/images/cba.jpg",
     alt: "Revit detail model of blind assemblies and headrail millwork for the Commonwealth Bank of Australia fit-out",
     description:
       "Client-template sheet production covering millwork, blinds, finishes, furniture alignment and COBie data.",
@@ -107,7 +98,7 @@ const projects = [
     location: "Bahrain",
     type: "Hospitality Development",
     lod: "LOD 400",
-    image: redSea.url,
+    image: "/images/red-sea-global.jpg",
     alt: "Three-dimensional model of a Red Sea Global hospitality pavilion with curved roof structure",
     description:
       "Modelled skirting, coping and steel framing across four zones and maintained coordinated asset data.",
@@ -119,7 +110,7 @@ const projects = [
     location: "Qatar",
     type: "AM, FM and QTV Buildings",
     lod: "LOD 100–200",
-    image: qatar.url,
+    image: "/images/qatar-media.jpg",
     alt: "Massing model of the Qatar Media Project AM, FM and QTV buildings",
     description:
       "CAD-to-BIM reconstruction of floors, walls, ceilings and interior elements across three media buildings.",
@@ -208,7 +199,7 @@ function Nav() {
             ))}
           </ul>
           <a
-            href={cvPdf.url}
+            href="/files/Yuvaraj-Asokan-BIM-Modeller-CV.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex min-h-[44px] items-center rounded-full bg-ink px-4 py-2 font-mono text-[11px] uppercase tracking-[0.16em] text-white transition-transform hover:-translate-y-0.5"
@@ -286,7 +277,7 @@ function Index() {
                 Explore Projects
               </a>
               <a
-                href={cvPdf.url}
+                href="/files/Yuvaraj-Asokan-BIM-Modeller-CV.pdf"
                 download="Yuvaraj-Asokan-BIM-Modeller-CV.pdf"
                 className="inline-flex min-h-[44px] items-center justify-center rounded-full border border-ink px-6 py-3 text-sm font-semibold text-ink transition-transform hover:-translate-y-0.5"
               >
@@ -312,7 +303,7 @@ function Index() {
           <div className="relative min-w-0">
             <div className="relative overflow-hidden border border-line bg-stone">
               <img
-                src={portrait.url}
+                src="/images/yuvaraj-asokan.jpg"
                 alt="Portrait of Yuvaraj Asokan, BIM Modeller based in Dubai"
                 className="aspect-[3/4] w-full object-cover object-top"
                 loading="eager"
@@ -438,7 +429,7 @@ function Index() {
           </div>
 
           <a
-            href={portfolioPdf.url}
+            href="/files/Yuvaraj-Asokan-BIM-Portfolio.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-16 flex min-h-[44px] items-center justify-between border-y border-ink py-6 text-lg font-semibold tracking-tight transition-colors hover:text-subtle sm:text-2xl"
@@ -542,8 +533,8 @@ function Index() {
           <div className="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-3">
             {[
               { label: "LinkedIn", href: "https://www.linkedin.com/in/yuvarajasokan" },
-              { label: "Curriculum Vitae", href: cvPdf.url },
-              { label: "Project Portfolio", href: portfolioPdf.url },
+              { label: "Curriculum Vitae", href: "/files/Yuvaraj-Asokan-BIM-Modeller-CV.pdf" },
+              { label: "Project Portfolio", href: "/files/Yuvaraj-Asokan-BIM-Portfolio.pdf" },
             ].map((l) => (
               <a
                 key={l.label}
