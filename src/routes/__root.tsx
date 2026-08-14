@@ -98,7 +98,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@1,400;1,500&family=IBM+Plex+Mono:wght@400;500&display=swap",
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
-      { rel: "preload", as: "image", href: "/images/yuvaraj-asokan.jpg", fetchpriority: "high" },
+      { rel: "preload", as: "image", href: "/images/yuvaraj-asokan.jpg" },
     ],
     scripts: [{ children: themeInitScript }],
   }),
