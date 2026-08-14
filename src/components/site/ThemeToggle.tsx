@@ -47,13 +47,6 @@ export function ThemeToggle() {
       >
         {isDark ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
       </span>
-      <span
-        aria-hidden
-        className="pointer-events-none absolute inset-0 flex items-center justify-between px-2.5 font-mono text-[9px] uppercase tracking-[0.18em] text-subtle"
-      >
-        <span className={isDark ? "opacity-0" : "opacity-0"}>·</span>
-        <span>{isDark ? "" : ""}</span>
-      </span>
     </button>
   );
 }
