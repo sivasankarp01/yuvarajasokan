@@ -407,7 +407,6 @@ function Index() {
                 width={692}
                 height={1009}
                 loading="eager"
-                fetchPriority="high"
                 decoding="async"
                 sizes="(max-width: 1024px) 92vw, 42vw"
               />
