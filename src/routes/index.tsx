@@ -420,7 +420,7 @@ function Index() {
               </p>
             </div>
             <span
-              className="absolute -right-14 top-1/2 hidden -translate-y-1/2 rotate-90 font-mono text-[10px] uppercase tracking-[0.3em] text-subtle xl:block"
+              className="absolute -right-14 top-1/2 hidden -translate-y-1/2 rotate-90 font-mono text-[10px] uppercase tracking-[0.3em] text-subtle 2xl:block"
               aria-hidden
             >
               25.2048° N · 55.2708° E
