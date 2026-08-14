@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import {
   ArrowUpRight,
   Boxes,
@@ -44,6 +44,10 @@ export const Route = createFileRoute("/")({
       { property: "og:type", content: "profile" },
       { property: "og:url", content: "/" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESCRIPTION },
+      { name: "robots", content: "index, follow, max-image-preview:large" },
+      { property: "og:locale", content: "en_AE" },
     ],
     links: [{ rel: "canonical", href: "/" }],
     scripts: [
@@ -316,7 +320,7 @@ function Nav() {
   );
 }
 
-function FlipCard({ children }: { children: React.ReactNode }) {
+function FlipCard({ children }: { children: ReactNode }) {
   const [flipped, setFlipped] = useState(false);
   return (
     <div
