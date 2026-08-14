@@ -190,6 +190,45 @@ const skills: { label: string; highlight?: boolean }[] = [
   { label: "Model QA/QC", highlight: true },
 ];
 
+const capabilities = [
+  {
+    icon: Building2,
+    title: "Architectural BIM",
+    front: "Design intent to model",
+    back: "Full architectural modelling from CAD and design packages — plans, sections, elevations, call-outs and coordinated GA sheets.",
+  },
+  {
+    icon: Sofa,
+    title: "Interior Design BIM",
+    front: "Fit-out precision",
+    back: "Millwork, finishes, furniture, blinds and RCP modelling with client Revit templates and family creation.",
+  },
+  {
+    icon: ScanSearch,
+    title: "Clash Detection",
+    front: "Navisworks federation",
+    back: "Model federation, clash matrices, issue tracking and resolution support across architecture, structure and MEP.",
+  },
+  {
+    icon: Layers,
+    title: "LOD 100 – 500",
+    front: "Right detail, right stage",
+    back: "Staged model development from concept massing through construction-ready and as-built information.",
+  },
+  {
+    icon: ClipboardCheck,
+    title: "Model QA / QC",
+    front: "Audited deliverables",
+    back: "Model audits, naming and workset standards, IFC verification and BEP-compliant deliverable checks.",
+  },
+  {
+    icon: Boxes,
+    title: "COBie & Asset Data",
+    front: "Structured handover",
+    back: "Parameter mapping, asset tagging and COBie data population for smooth facility handover.",
+  },
+];
+
 const tickerItems = [
   "REVIT",
   "NAVISWORKS",
@@ -202,6 +241,7 @@ const tickerItems = [
 
 const navLinks = [
   { label: "About", href: "#about" },
+  { label: "Capabilities", href: "#capabilities" },
   { label: "Projects", href: "#projects" },
   { label: "Experience", href: "#experience" },
 ];
@@ -273,6 +313,19 @@ function Nav() {
         </ul>
       )}
     </header>
+  );
+}
+
+function FlipCard({ children }: { children: React.ReactNode }) {
+  const [flipped, setFlipped] = useState(false);
+  return (
+    <div
+      className="flip-scene h-[230px] w-full"
+      data-flipped={flipped}
+      onClick={() => setFlipped((v) => !v)}
+    >
+      <div className="flip-inner relative h-full w-full">{children}</div>
+    </div>
   );
 }
 
@@ -424,10 +477,51 @@ function Index() {
         </div>
       </section>
 
+      {/* CAPABILITIES */}
+      <section id="capabilities" className="scroll-mt-20 border-y border-line bg-cream py-20 sm:py-28">
+        <div className="mx-auto max-w-[1280px] px-4 sm:px-8">
+          <Reveal>
+            <SectionLabel>02 / CAPABILITIES</SectionLabel>
+            <h2 className="mt-8 max-w-2xl text-[clamp(1.9rem,4.4vw,3.1rem)] font-extrabold leading-[1.03] tracking-[-0.03em]">
+              What I bring to a{" "}
+              <span className="font-serif italic font-normal text-subtle">BIM team.</span>
+            </h2>
+            <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.2em] text-subtle">
+              Hover or tap a card to flip
+            </p>
+          </Reveal>
+
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {capabilities.map((c, i) => {
+              const Icon = c.icon;
+              return (
+                <Reveal key={c.title} delay={i * 70}>
+                  <FlipCard>
+                    <div className="flip-face flex h-full flex-col justify-between border border-line bg-stone p-6">
+                      <Icon className="h-8 w-8 text-ink" aria-hidden />
+                      <div className="mt-10">
+                        <h3 className="text-xl font-bold tracking-tight">{c.title}</h3>
+                        <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.18em] text-subtle">
+                          {c.front}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flip-face flip-back absolute inset-0 flex h-full flex-col justify-between border border-ink bg-ink p-6 text-cream">
+                      <Icon className="h-8 w-8 text-lime" aria-hidden />
+                      <p className="mt-6 text-sm leading-relaxed text-cream/85">{c.back}</p>
+                    </div>
+                  </FlipCard>
+                </Reveal>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* PROJECTS */}
       <section id="projects" className="scroll-mt-20 bg-stone py-20 sm:py-28">
         <div className="mx-auto max-w-[1280px] px-4 sm:px-8">
-          <SectionLabel>02 / SELECTED WORK</SectionLabel>
+          <Reveal><SectionLabel>03 / SELECTED WORK</SectionLabel></Reveal>
           <div className="mt-8 grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
             <h2 className="text-[clamp(1.9rem,4.4vw,3.1rem)] font-extrabold leading-[1.03] tracking-[-0.03em]">
               Projects that moved
@@ -441,8 +535,8 @@ function Index() {
           </div>
 
           <div className="mt-14 grid gap-10 md:grid-cols-2">
-            {projects.map((p) => (
-              <article key={p.no} className="group border-t-2 border-ink pt-5">
+            {projects.map((p, i) => (
+              <Reveal key={p.no} delay={(i % 2) * 90} className="group block border-t-2 border-ink pt-5" as="article">
                 <div className="relative overflow-hidden bg-white">
                   <img
                     src={p.image}
@@ -473,7 +567,7 @@ function Index() {
                     </li>
                   ))}
                 </ul>
-              </article>
+              </Reveal>
             ))}
           </div>
 
@@ -494,7 +588,7 @@ function Index() {
         id="experience"
         className="mx-auto max-w-[1280px] scroll-mt-20 px-4 py-20 sm:px-8 sm:py-28"
       >
-        <SectionLabel>03 / EXPERIENCE</SectionLabel>
+        <Reveal><SectionLabel>04 / EXPERIENCE</SectionLabel></Reveal>
         <div className="mt-10 grid gap-12 lg:grid-cols-2 lg:gap-20">
           <h2 className="text-[clamp(1.9rem,4.4vw,3.1rem)] font-extrabold leading-[1.03] tracking-[-0.03em]">
             Experience across
@@ -502,8 +596,8 @@ function Index() {
             <span className="font-serif italic font-normal text-subtle">design and delivery.</span>
           </h2>
           <ol className="min-w-0 border-l border-line">
-            {experience.map((e) => (
-              <li key={e.role + e.dates} className="relative pb-12 pl-6 last:pb-0">
+            {experience.map((e, i) => (
+              <Reveal key={e.role + e.dates} as="li" delay={i * 90} className="relative block pb-12 pl-6 last:pb-0">
                 <span
                   className="absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full bg-lime ring-2 ring-ink"
                   aria-hidden
@@ -516,7 +610,7 @@ function Index() {
                 {e.description && (
                   <p className="mt-3 leading-relaxed text-subtle">{e.description}</p>
                 )}
-              </li>
+              </Reveal>
             ))}
           </ol>
         </div>
@@ -526,7 +620,7 @@ function Index() {
       <section className="bg-ink py-20 text-cream sm:py-28">
         <div className="mx-auto max-w-[1280px] px-4 sm:px-8">
           <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-cream/60">
-            04 / TOOLKIT
+            05 / TOOLKIT
           </p>
           <h2 className="mt-8 text-[clamp(1.9rem,4.4vw,3.1rem)] font-extrabold leading-[1.03] tracking-[-0.03em]">
             Technical capability,
@@ -583,9 +677,9 @@ function Index() {
           </div>
           <div className="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-3">
             {[
-              { label: "LinkedIn", href: "https://www.linkedin.com/in/yuvarajasokan" },
-              { label: "Curriculum Vitae", href: "/files/Yuvaraj-Asokan-BIM-Modeller-CV.pdf" },
-              { label: "Project Portfolio", href: "/files/Yuvaraj-Asokan-BIM-Portfolio.pdf" },
+              { label: "LinkedIn", href: "https://www.linkedin.com/in/yuvarajasokan", icon: Linkedin },
+              { label: "Curriculum Vitae", href: "/files/Yuvaraj-Asokan-BIM-Modeller-CV.pdf", icon: FileStack },
+              { label: "Project Portfolio", href: "/files/Yuvaraj-Asokan-BIM-Portfolio.pdf", icon: Ruler },
             ].map((l) => (
               <a
                 key={l.label}
@@ -594,7 +688,9 @@ function Index() {
                 rel="noopener noreferrer"
                 className="inline-flex min-h-[44px] items-center font-mono text-[11px] uppercase tracking-[0.18em] text-subtle transition-colors hover:text-ink"
               >
-                {l.label} ↗
+                <l.icon className="mr-2 h-3.5 w-3.5" aria-hidden />
+                {l.label}
+                <ArrowUpRight className="ml-1 h-3.5 w-3.5" aria-hidden />
               </a>
             ))}
           </div>
