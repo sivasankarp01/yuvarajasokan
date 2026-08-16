@@ -27,6 +27,11 @@
   --color-cream: var(--cream);
   --color-stone: var(--stone);
   --color-lime: var(--lime);
+  --color-cta: var(--cta);
+  --color-on-cta: var(--on-cta);
+  --color-invert: var(--invert);
+  --color-on-invert: var(--on-invert);
+  --color-on-lime: var(--on-lime);
   --color-subtle: var(--subtle);
   --color-line: var(--line);
   --radius-sm: calc(var(--radius) - 4px);
@@ -79,6 +84,11 @@
   --cream: #F4F1E9;
   --stone: #E8E8E2;
   --lime: #D9FF43;
+  --cta: #13211C;
+  --on-cta: #F4F1E9;
+  --invert: #13211C;
+  --on-invert: #F4F1E9;
+  --on-lime: #13211C;
   --subtle: #627069;
   --line: #D6D7CF;
   --background: #F4F1E9;
@@ -122,6 +132,11 @@
   --cream: #0E1613;
   --stone: #131F1A;
   --lime: #D9FF43;
+  --cta: #D9FF43;
+  --on-cta: #0E1613;
+  --invert: #182721;
+  --on-invert: #F1F4F1;
+  --on-lime: #0E1613;
   --subtle: #93A79C;
   --line: #26332C;
   --background: #0E1613;

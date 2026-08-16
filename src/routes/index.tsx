@@ -256,7 +256,7 @@ function Nav() {
     <header className="sticky top-0 z-50 border-b border-line bg-cream/90 backdrop-blur">
       <div className="mx-auto grid max-w-[1280px] grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-4 py-3 sm:px-8">
         <a href="#top" className="flex min-w-0 items-center gap-3">
-          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-ink font-mono text-xs tracking-widest text-lime">
+          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-cta font-mono text-xs tracking-widest text-on-cta">
             YA
           </span>
           <span className="truncate text-sm font-semibold tracking-tight text-ink sm:text-base">
@@ -280,7 +280,7 @@ function Nav() {
             href="/files/Yuvaraj-Asokan-BIM-Modeller-CV.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex min-h-[44px] items-center rounded-full bg-ink px-4 py-2 font-mono text-[11px] uppercase tracking-[0.16em] text-cream transition-transform hover:-translate-y-0.5"
+            className="inline-flex min-h-[44px] items-center rounded-full bg-cta px-4 py-2 font-mono text-[11px] uppercase tracking-[0.16em] text-on-cta transition-transform hover:-translate-y-0.5"
           >
             <FileStack className="mr-2 h-3.5 w-3.5" aria-hidden />
             View CV
@@ -368,7 +368,7 @@ function Index() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
                 href="#projects"
-                className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-ink px-6 py-3 text-sm font-semibold text-cream transition-transform hover:-translate-y-0.5"
+                className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-cta px-6 py-3 text-sm font-semibold text-on-cta transition-transform hover:-translate-y-0.5"
               >
                 Explore Projects
                 <ArrowUpRight className="ml-2 h-4 w-4" aria-hidden />
@@ -412,10 +412,10 @@ function Index() {
               />
             </div>
             <div className="absolute -bottom-6 left-0 max-w-[80%] bg-lime px-5 py-4 sm:-left-6">
-              <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-ink/70">
+              <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-on-lime/70">
                 Current role
               </p>
-              <p className="mt-1 text-sm font-bold tracking-tight text-ink">
+              <p className="mt-1 text-sm font-bold tracking-tight text-on-lime">
                 BIM Modeller · ARCH / ID
               </p>
             </div>
@@ -430,14 +430,14 @@ function Index() {
       </section>
 
       {/* TICKER */}
-      <div className="overflow-hidden border-y border-ink/20 bg-ink py-4">
+      <div className="overflow-hidden border-y border-line bg-invert py-4">
         <div className="ticker-track flex w-max">
           {[0, 1].map((dup) => (
             <div key={dup} className="flex shrink-0" aria-hidden={dup === 1}>
               {tickerItems.map((t) => (
                 <span
                   key={t}
-                  className="flex items-center whitespace-nowrap px-6 font-mono text-[11px] uppercase tracking-[0.28em] text-cream sm:text-xs"
+                  className="flex items-center whitespace-nowrap px-6 font-mono text-[11px] uppercase tracking-[0.28em] text-on-invert sm:text-xs"
                 >
                   {t}
                   <span className="pl-6 text-lime">◆</span>
@@ -509,9 +509,9 @@ function Index() {
                         </p>
                       </div>
                     </div>
-                    <div className="flip-face flip-back absolute inset-0 flex h-full flex-col justify-between border border-ink bg-ink p-6 text-cream">
+                    <div className="flip-face flip-back absolute inset-0 flex h-full flex-col justify-between border border-invert bg-invert p-6 text-on-invert">
                       <Icon className="h-8 w-8 text-lime" aria-hidden />
-                      <p className="mt-6 text-sm leading-relaxed text-cream/85">{c.back}</p>
+                      <p className="mt-6 text-sm leading-relaxed text-on-invert/85">{c.back}</p>
                     </div>
                   </FlipCard>
                 </Reveal>
@@ -539,7 +539,7 @@ function Index() {
 
           <div className="mt-14 grid gap-10 md:grid-cols-2">
             {projects.map((p, i) => (
-              <Reveal key={p.no} delay={(i % 2) * 90} className="group block border-t-2 border-ink pt-5" as="article">
+              <Reveal key={p.no} delay={(i % 2) * 90} className="group block border-t-2 border-ink/40 pt-5" as="article">
                 <div className="relative overflow-hidden bg-white">
                   <img
                     src={p.image}
@@ -551,7 +551,7 @@ function Index() {
                     sizes="(max-width: 768px) 92vw, 46vw"
                     className="h-[260px] w-full object-contain p-4 transition-transform duration-500 group-hover:scale-[1.04] sm:h-[320px]"
                   />
-                  <span className="absolute left-0 top-0 bg-ink px-3 py-1.5 font-mono text-[10px] tracking-[0.2em] text-lime">
+                  <span className="absolute left-0 top-0 bg-invert px-3 py-1.5 font-mono text-[10px] tracking-[0.2em] text-lime">
                     {p.no}
                   </span>
                 </div>
@@ -578,7 +578,7 @@ function Index() {
             href="/files/Yuvaraj-Asokan-BIM-Portfolio.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-16 flex min-h-[44px] items-center justify-between border-y border-ink py-6 text-lg font-semibold tracking-tight transition-colors hover:text-subtle sm:text-2xl"
+            className="mt-16 flex min-h-[44px] items-center justify-between border-y border-ink/40 py-6 text-lg font-semibold tracking-tight transition-colors hover:text-subtle sm:text-2xl"
           >
             View the complete 41-page project portfolio
             <span aria-hidden>↗</span>
@@ -602,7 +602,7 @@ function Index() {
             {experience.map((e, i) => (
               <Reveal key={e.role + e.dates} as="li" delay={i * 90} className="relative block pb-12 pl-6 last:pb-0">
                 <span
-                  className="absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full bg-lime ring-2 ring-ink"
+                  className="absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full bg-lime ring-2 ring-background"
                   aria-hidden
                 />
                 <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-subtle">
@@ -620,15 +620,15 @@ function Index() {
       </section>
 
       {/* TOOLKIT */}
-      <section className="bg-ink py-20 text-cream sm:py-28">
+      <section className="bg-invert py-20 text-on-invert sm:py-28">
         <div className="mx-auto max-w-[1280px] px-4 sm:px-8">
-          <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-cream/60">
+          <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-on-invert/60">
             05 / TOOLKIT
           </p>
           <h2 className="mt-8 text-[clamp(1.9rem,4.4vw,3.1rem)] font-extrabold leading-[1.03] tracking-[-0.03em]">
             Technical capability,
             <br />
-            <span className="font-serif italic font-normal text-cream/55">
+            <span className="font-serif italic font-normal text-on-invert/55">
               practical application.
             </span>
           </h2>
@@ -638,8 +638,8 @@ function Index() {
                 key={s.label}
                 className={
                   s.highlight
-                    ? "rounded-full bg-lime px-5 py-2.5 text-sm font-semibold text-ink"
-                    : "rounded-full border border-cream/25 px-5 py-2.5 text-sm text-cream/90"
+                    ? "rounded-full bg-lime px-5 py-2.5 text-sm font-semibold text-on-lime"
+                    : "rounded-full border border-on-invert/25 px-5 py-2.5 text-sm text-on-invert/90"
                 }
               >
                 {s.label}
@@ -665,7 +665,7 @@ function Index() {
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:justify-center">
             <a
               href="mailto:yuvarajasokan9@gmail.com"
-              className="inline-flex min-h-[44px] w-full items-center justify-center rounded-full bg-ink px-6 py-3 text-sm font-semibold text-cream transition-transform hover:-translate-y-0.5 sm:w-auto"
+              className="inline-flex min-h-[44px] w-full items-center justify-center rounded-full bg-cta px-6 py-3 text-sm font-semibold text-on-cta transition-transform hover:-translate-y-0.5 sm:w-auto"
             >
               <Mail className="mr-2 h-4 w-4" aria-hidden />
               yuvarajasokan9@gmail.com
