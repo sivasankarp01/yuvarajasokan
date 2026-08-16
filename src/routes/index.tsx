@@ -256,7 +256,7 @@ function Nav() {
     <header className="sticky top-0 z-50 border-b border-line bg-cream/90 backdrop-blur">
       <div className="mx-auto grid max-w-[1280px] grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-4 py-3 sm:px-8">
         <a href="#top" className="flex min-w-0 items-center gap-3">
-          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-invert font-mono text-xs tracking-widest text-lime">
+          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-cta font-mono text-xs tracking-widest text-on-cta">
             YA
           </span>
           <span className="truncate text-sm font-semibold tracking-tight text-ink sm:text-base">
@@ -280,7 +280,7 @@ function Nav() {
             href="/files/Yuvaraj-Asokan-BIM-Modeller-CV.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex min-h-[44px] items-center rounded-full bg-invert px-4 py-2 font-mono text-[11px] uppercase tracking-[0.16em] text-on-invert transition-transform hover:-translate-y-0.5"
+            className="inline-flex min-h-[44px] items-center rounded-full bg-cta px-4 py-2 font-mono text-[11px] uppercase tracking-[0.16em] text-on-cta transition-transform hover:-translate-y-0.5"
           >
             <FileStack className="mr-2 h-3.5 w-3.5" aria-hidden />
             View CV
@@ -368,7 +368,7 @@ function Index() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
                 href="#projects"
-                className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-invert px-6 py-3 text-sm font-semibold text-on-invert transition-transform hover:-translate-y-0.5"
+                className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-cta px-6 py-3 text-sm font-semibold text-on-cta transition-transform hover:-translate-y-0.5"
               >
                 Explore Projects
                 <ArrowUpRight className="ml-2 h-4 w-4" aria-hidden />
@@ -665,7 +665,7 @@ function Index() {
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:justify-center">
             <a
               href="mailto:yuvarajasokan9@gmail.com"
-              className="inline-flex min-h-[44px] w-full items-center justify-center rounded-full bg-invert px-6 py-3 text-sm font-semibold text-on-invert transition-transform hover:-translate-y-0.5 sm:w-auto"
+              className="inline-flex min-h-[44px] w-full items-center justify-center rounded-full bg-cta px-6 py-3 text-sm font-semibold text-on-cta transition-transform hover:-translate-y-0.5 sm:w-auto"
             >
               <Mail className="mr-2 h-4 w-4" aria-hidden />
               yuvarajasokan9@gmail.com
