@@ -41,7 +41,7 @@ export function ThemeToggle() {
     >
       <span
         aria-hidden
-        className={`grid h-8 w-8 place-items-center rounded-full bg-ink text-lime shadow-sm transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+        className={`grid h-8 w-8 place-items-center rounded-full bg-invert text-lime shadow-sm transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
           isDark ? "translate-x-[32px]" : "translate-x-0"
         }`}
       >
